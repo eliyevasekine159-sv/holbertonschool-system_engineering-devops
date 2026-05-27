@@ -1,0 +1,39 @@
+# Secured and Monitored Web Infrastructure
+
+
+
+## Architecture Diagram
+
+https://imgur.com/RdPfXg0
+
+
+
+## Additions and Why
+
+* Firewalls: To restrict unauthorized traffic and protect servers.
+
+* SSL Certificate: To encrypt data in transit between the User and the Load Balancer (HTTPS).
+
+* Monitoring Clients: To collect metrics for analysis and alerting.
+
+
+
+## Explanations
+
+* Firewall: Filters incoming/outgoing network traffic based on rules.
+
+* HTTPS: Ensures confidentiality and integrity.
+
+* Monitoring tool: Collects data via an agent installed on servers.
+
+* Monitor QPS: Use tools like 'mysqladmin extended-status' or analyze Nginx logs.
+
+
+
+## Issues
+
+* SSL Termination at LB: Internal traffic remains unencrypted.
+
+* Single MySQL Master: If it fails, you lose write capability.
+
+* Homogeneous Servers: Components competing for resources makes scaling difficult.
