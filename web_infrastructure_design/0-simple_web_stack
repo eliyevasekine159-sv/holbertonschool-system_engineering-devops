@@ -1,0 +1,39 @@
+# Simple Web Infrastructure Design
+
+
+
+## Architecture Diagram
+
+https://imgur.com/yqrOKeK
+
+
+
+## Infrastructure Components
+
+* Server (8.8.8.8): A computer that hosts all components.
+
+* Domain Name (foobar.com): Human-readable address mapping to the server IP.
+
+* Nginx (Web Server): Handles HTTP requests.
+
+* Application Server: Executes the application code.
+
+* Application Files: The codebase.
+
+* Database (MySQL): Stores and manages application data.
+
+
+
+## Communication
+
+* The client communicates with the server via HTTP/HTTPS protocols over the internet.
+
+
+
+## Issues with this infrastructure
+
+* SPOF: If the server fails, the service stops.
+
+* Downtime: Deployment/Maintenance causes temporary unavailability.
+
+* Scalability: Limited by a single server's resources.
