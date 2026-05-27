@@ -1,0 +1,30 @@
+# Scale Up Web Infrastructure
+
+
+
+## Architecture Diagram
+
+https://imgur.com/TbMvv7s
+
+
+
+## Infrastructure Design
+
+* Load Balancer Cluster: Two HAproxy servers configured to handle traffic, ensuring high availability.
+
+* Web Servers: Two servers dedicated only to serving web content (Nginx).
+
+* Application Servers: Two servers dedicated to executing application code.
+
+* Database Server: A dedicated server for the MySQL database.
+
+
+
+## Why add these elements?
+
+* Separating Components: By placing the Web, App, and Database on different servers, we prevent resource contention (CPU/RAM). If the database is busy, it doesn't slow down the web server.
+
+* Load Balancer Cluster: Ensures that if one Load Balancer fails, the other takes over, removing a SPOF.
+
+* Scaling: It is easier to scale the application tier or database tier independently based on demand.
+
