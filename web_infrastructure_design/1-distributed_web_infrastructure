@@ -1,0 +1,37 @@
+# Distributed Web Infrastructure
+
+
+
+## Architecture Diagram
+
+https://imgur.com/46udhWU
+
+
+
+## Explanation
+
+* Load Balancer: Distributes traffic to prevent server overload.
+
+* Distribution Algorithm: Round Robin (sends requests to each server sequentially).
+
+* Active-Active vs Active-Passive:
+
+    - Active-Active: Both servers handle traffic (high availability/throughput).
+
+    - Active-Passive: Only one is active, the other takes over if the first fails.
+
+* Database Primary-Replica:
+
+    - Primary: Handles write operations.
+
+    - Replica: Copies data from Primary and handles read operations.
+
+
+
+## Issues
+
+* SPOF: The Load Balancer is a SPOF.
+
+* Security: No firewall to block malicious traffic; no SSL/TLS for encryption.
+
+* Monitoring: No tools to track performance or errors.
